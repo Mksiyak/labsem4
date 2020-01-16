@@ -1,0 +1,25 @@
+#mpage{
+    background-color: rgb(153, 118, 72);
+}
+#paragraph1 {
+    font-style: italic;
+  }
+  #paragraph2 {
+    font-style: oblique;
+  }
+  #paragraph3 {
+    font-style: normal;
+  }
+  #table{
+      width: 100%;
+      border: 2px solid black;
+  }
+  table td{
+      border: 1px solid ;
+  }
+  table th{
+    border:1px solid ;
+  }
+  #mycanvas{
+    border: 2px solid rgba(8, 25, 117, 0.178);
+  }
