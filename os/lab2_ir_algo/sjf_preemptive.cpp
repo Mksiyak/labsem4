@@ -60,7 +60,7 @@ int main()
 		
 	std::map<int, int> tat,wt;
 	
-	for (int i = 0; i < no_of_total_cycles_used; ++i)
+	for (int i = 0; i <= no_of_total_cycles_used+1; ++i)
 	{
 		sort(t,t+no_of_process);
 		
@@ -76,7 +76,7 @@ int main()
 			j++;
 		}
 		
-		if(j!=no_of_process and  get<0>(t[j])==0)
+		if(  get<0>(t[j])==0)
 		{
 			tat[get<2>(t[j])]=i+1-get<1>(t[j]);
 

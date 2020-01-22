@@ -32,7 +32,7 @@ int main()
 	
 	}
 	
-	int total_waiting_time = 0,cycle_timer = 0;
+	int total_waiting_time = 0,cycle_timer = 0,total_around_time=0;
 	
 	sort(t,t+no_of_process);
 	
@@ -42,9 +42,11 @@ int main()
 	{
 		cycle_timer=max(cycle_timer,get<0>(t[i]))+get<1>(t[i]);
 
-		deb(cycle_timer)
+		// deb(cycle_timer)
 	
 		tat[get<2>(t[i])] = cycle_timer-get<0>(t[i]);
+
+		total_around_time+=cycle_timer-get<0>(t[i]);
 	
 		wt[get<2>(t[i])] = cycle_timer-get<0>(t[i])-get<1>(t[i]);
 	
@@ -56,6 +58,7 @@ int main()
 	}
 
 	cout<<"avg waiting time is : "<<(double)total_waiting_time/no_of_process<<endl;
+	cout<<"avg turn around time is :"<<(double)total_around_time/no_of_process<<endl;
 }
 /*
 5
