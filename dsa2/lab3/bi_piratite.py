@@ -4,7 +4,7 @@ def bfs(adjlist,src,vis,grp):
     deque = collections.deque([])
     deque.append(src)
     vis[src]=True
-    grp[src] =True
+    grp[src] = True
     while(len(deque)!=0):
         temp = deque.popleft()
         for i in adjlist[temp]:

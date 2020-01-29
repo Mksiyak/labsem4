@@ -1,15 +1,9 @@
 import collections 
-
 def dfs(adjlist,src,vis):
-    vis[src] = True
-    print(src)
-    for i in adjlist[src]:
-        if(vis[i]==False):
-            dfs(adjlist,i,vis)
+    
 def main():
     ''' Adjacency List representation. G is a list of lists. '''
     G = [] 
-
     file=open('input.txt','r')
     for line in file:
         line=line.strip()
@@ -21,12 +15,10 @@ def main():
                 continue
             adjacentVertices.append(int(node))
         G.append(adjacentVertices)
-
     file.close()
     print(G)
-    vis = []
-    for i in range(6):
-        vis.append(False)
+    vis = [-1]*6
+    start = [-1]*6
+    stop = [-1]*6
     src = int(input('enter source vertex : '))
-    dfs(G,src,vis)
 main()
