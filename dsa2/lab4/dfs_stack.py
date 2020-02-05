@@ -35,14 +35,14 @@ def main():
     start = [-1]*6
     stop = [-1]*6
     src = int(input('enter source vertex : '))
-    # dfs(G,src,vis,start,stop,-1)
+    dfs(G,src,vis,start,stop,-1)
     dq = collections.deque()
     dq.append(src)
     vis[src] = 1
     time = 0
     while(len(dq)!=0):
         start[src] = time
-        # time+=1
+        time+=1
         src = dq.pop()
         for i in G[src]:
             if(vis[i]==-1):
