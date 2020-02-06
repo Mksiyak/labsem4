@@ -67,13 +67,13 @@ button:hover {
 <script type="text/javascript">
 
 function validate_sign_up(){
-  document.alert('called');
-  var fanme = document.getElementsByName('fname')[0].value().trim();
-  var lanme = document.getElementsByName('lname')[0].value().trim();
-  var mail = document.getElementsByName('email')[0].value().trim();
-  var psw = document.getElementsByName('psw')[0].value().trim();
-  var pswr = document.getElementsByName('psw-repeat')[0].value().trim();
-  if(fname==""||lname==""||mail==""||psw==""||pswr=="")
+  var fname = document.getElementsByName('fname')[0].value.trim();
+  var lname = document.getElementsByName('lname')[0].value.trim();
+  var mail = document.getElementsByName('email')[0].value.trim();
+  var psw = document.getElementsByName('psw')[0].value.trim();
+  var pswr = document.getElementsByName('psw-repeat')[0].value.trim();
+  var mailreg = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+ if(fname==""||lname==""||mail==""||psw==""||pswr=="")
   {
     alert('all fields are necessary');
     return false;
@@ -83,18 +83,26 @@ function validate_sign_up(){
     alert('password shold be same in both fields');
     return false;
   }
-    return true;
+  else{
+  if(mail.match(mailreg)==false)
+  {
+    alert('incorrect mail format');
+  }
+  else{alert('success');
+    return true;}
+    
+  }
 }
 </script>
 <body>
 
-<form onsubmit="return validate_sign_up()">
+<form onsubmit="return validate_sign_up()" action='index.html'>
   <div class="container">
     <h1>Sign Up here</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
     <label for="fname"><b>First Name</b></label>
-    <input type="text" placeholder="John" name="fanme">
+    <input type="text" placeholder="John" name="fname">
     
     <label for="lanme"><b>Last Name</b></label>
     <input type="text" placeholder="Doe" name="lname">

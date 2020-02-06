@@ -1,8 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-    
+    <script type ="text/javascript">
+    function calculate(){
+        var plan = document.getElementById('selectplan').value;
+        var price = 0;
+        var flag = check();
+        var discount=0;
+        if(flag)
+        {
+            alert('yey you got discount of 40$');
+            discount =40;
+        }
+        if(plan=='weekly')
+        {
+            price = 10*4*12;
+        }
+        else if(plan =='monthly')
+        {
+            price = 100*11;
+        }
+        else{
+            price = 10000;
+        }
+        console.log(price);
+        console.log(discount);
+        var msg = "you have to pay "+(price-discount)+"$ per year";
+        alert(msg)
+    }
+    function getRand()
+    {
+        return 2;
+        // return Math.floor(Math.random()*5);
+    }
+    function check(){
+        var val = document.getElementById('luck').value;
+        if(val==getRand())
+        {return true;}
+        else
+        {return false;}
+    }
     </script>
 <title>Page Title</title>
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -13,17 +50,13 @@
     <div class="top">
         <div class="logo">
           <img src="https://www.readspeaker.com/wp-content/uploads/globalnews.png" alt="" width="150px" height="70px"/>
-          <br>
           <div id = "logo-caption" style="float: right;"><strong><em>Leading the way</em></strong></div> 
         </div>
-        <nav>
-          <ul id = "nav-contents">
           <li>Home</li>
           <li>Home</li>
           <li><a href="login.html">login</a></li>
           <li><a href="signup.html">sign-up</a></li>
           </ul>
-          </nav>
         </div>
         <hr />      
     <div id = "contents">
@@ -191,22 +224,33 @@
           <h5>
               leave your details to subscribe our newslatter
           </h5>
-          <form>
+          <form onsubmit=" return calculate()">
               <label>Name </label>
-              <input type = text>
+              <input type = text required>
               <br>
               <label>Email </label>
-              <input type = email>
+              <input type = "email" required>
+              <br>
+              <label for="selectplan">choose your plan</label>
+              <select id="selectplan" style="margin-left:20px;">
+                <option value="weekly">10$/week</option>
+                <option value="monthly">100$/week</option>
+                <option value="yearly">1000$/year</option>
+              </select>
+              <br>
+              <label for="luck">try your luck</label>
+              <input type = "text" id ="luck">
               <br>
               <button id = "btnsubs">
                   subscribe
               </button>
           </form>
+          <p id = "subs-message">
+          </p>
       </div>
       <div>
           <h1>Advanced html tags</h1>
-          <canvas id="mycanvas" width="500px" height="500px" >
-
+          <canvas id="mycanvas" width="500px" height="500px">
           </canvas>
       </div>
       <meter value="2" min="0" max="10">2 out of 10</meter><br>
@@ -214,7 +258,7 @@
       <article>
         <h1>Article</h1>
         <p>article tag is mainly used on news websites</p>
-      </article>      
+      </article> 
       <summary id = "summary">
           this statement is written inside summary tag
       </summary>
