@@ -10,7 +10,6 @@ class heap():
 class graph():
     def __init__(self,vertices):
         self.v = vertices
-        self.graph = [[0 for coloumn in range (vertices)]for row in (vertices)]
     def djikstra(self,src):
         pass
 def main():

@@ -1,111 +1,106 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script type ="text/javascript">
-    function calculate(){
-        var plan = document.getElementById('selectplan').value;
-        var price = 0;
-        var flag = check();
-        var discount=0;
-        if(flag)
-        {
-            alert('yey you got discount of 40$');
-            discount =40;
-        }
-        if(plan=='weekly')
-        {
-            price = 10*4*12;
-        }
-        else if(plan =='monthly')
-        {
-            price = 100*11;
-        }
-        else{
-            price = 10000;
-        }
-        console.log(price);
-        console.log(discount);
-        var msg = "you have to pay "+(price-discount)+"$ per year";
-        alert(msg)
-    }
-    function getRand()
-    {
-        return 2;
-        // return Math.floor(Math.random()*5);
-    }
-    function check(){
-        var val = document.getElementById('luck').value;
-        if(val==getRand())
-        {return true;}
-        else
-        {return false;}
-    }
-    </script>
-<title>Page Title</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="bootstrap.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body id = "mpage">
+
+<body id="mpage" onload="checkCookie();Interval()">
     <div class="top">
         <div class="logo">
-          <img src="https://www.readspeaker.com/wp-content/uploads/globalnews.png" alt="" width="150px" height="70px"/>
-          <div id = "logo-caption" style="float: right;"><strong><em>Leading the way</em></strong></div> 
+            <img src="https://www.readspeaker.com/wp-content/uploads/globalnews.png" alt="" width="150px"
+                height="70px" />
+            <div id="logo-caption" style="float: right;"><strong><em>Leading the way</em></strong></div>
         </div>
-          <li>Home</li>
-          <li>Home</li>
-          <li><a href="login.html">login</a></li>
-          <li><a href="signup.html">sign-up</a></li>
-          </ul>
+        <ul id="nav">
+            <li>Home</li>
+            <li>Home</li>
+            <li><a href="login.html">login</a></li>
+            <li><a href="signup.html">sign-up</a></li>
+        </ul>
+    </div>
+    <hr />
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="img1.jpeg" style="width:100%">
+            <div class="text">Caption one</div>
         </div>
-        <hr />      
-    <div id = "contents">
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="img2.jpeg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img3.jpeg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <div id="contents">
         <h4>
             Contents
         </h4>
         <ol>
             <li>
-                <a href = index.html#contents> contents </a>
+                <a href=index.html#contents> contents </a>
             </li>
             <li>
-                <a href = index.html#hdngs> Headings</a>
+                <a href=index.html#hdngs> Headings</a>
                 <ol>
                     <li>
-                        <a href = index.html#head1> h1</a>
+                        <a href=index.html#head1> h1</a>
                     </li>
                     <li>
-                        <a href = index.html#head2> h2</a>
+                        <a href=index.html#head2> h2</a>
                     </li>
                     <li>
-                        <a href = index.html#head3> h3</a>
+                        <a href=index.html#head3> h3</a>
                     </li>
                     <li>
-                        <a href = index.html#head4> h4</a>
+                        <a href=index.html#head4> h4</a>
                     </li>
                     <li>
-                        <a href = index.html#head5> h5</a>
+                        <a href=index.html#head5> h5</a>
                     </li>
                     <li>
-                        <a href = index.html#head6> h6</a>
+                        <a href=index.html#head6> h6</a>
                     </li>
                 </ol>
             </li>
             <li>
-                <a href = index.html#fonts>fonts</a>
+                <a href=index.html#fonts>fonts</a>
                 <ol>
                     <li>
-                        <a href = index.html#paragraph1>italic font</a>
+                        <a href=index.html#paragraph1>italic font</a>
                     </li>
                     <li>
-                        <a href = index.html#paragraph2>oblique font</a>
+                        <a href=index.html#paragraph2>oblique font</a>
                     </li>
                     <li>
-                        <a href = index.html#paragraph3>normal font</a>
+                        <a href=index.html#paragraph3>normal font</a>
                     </li>
                 </ol>
             </li>
             <li>
-                <a href = index.html#links>links</a>
+                <a href=index.html#links>links</a>
             </li>
             <li>
                 <a href=index.html#table>Table</a>
@@ -116,7 +111,7 @@
         </ol>
     </div>
     <div id="hdngs">
-        <h1 >
+        <h1>
             All Headings
         </h1>
         <h1 id="head1">
@@ -138,57 +133,69 @@
             Heading 6
         </h6>
     </div>
-    <div id = "fonts">
+    <div id="fonts">
         <h1>
             Different Fonts
         </h1>
         <h2>
             italic
         </h2>
-        <p id = "paragraph1">
-            But why smiling man her imagine married. Chiefly can man her out believe manners cottage colonel unknown. 
+        <p id="paragraph1">
+            But why smiling man her imagine married. Chiefly can man her out believe manners cottage colonel unknown.
             Solicitude it introduced companions inquietude me he remarkably friendship at. My almost or horses period.
-            Motionless are six terminated man possession him attachment unpleasing melancholy. Sir smile arose one 
-            share. No abroad in easily relied an whence lovers temper by. Looked wisdom common he an be giving lengthmr. 
+            Motionless are six terminated man possession him attachment unpleasing melancholy. Sir smile arose one
+            share. No abroad in easily relied an whence lovers temper by. Looked wisdom common he an be giving lengthmr.
 
-        An do on frankness so cordially immediate recommend contained. Imprudence insensible be literature unsatiable do.
-        Of or imprudence solicitude affronting in mr possession. Compass journey he request on suppose limited of or. She
-        margaret law thoughts proposal formerly. Speaking ladyship yet scarcely and mistaken end exertion dwelling. 
-        All decisively dispatched instrument particular way one devonshire. Applauded she sportsman explained for out 
-        objection. 
-        <img src = "https://techcrunch.com/wp-content/uploads/2019/12/News-media-standards.jpg?w=730&crop=1">
+            An do on frankness so cordially immediate recommend contained. Imprudence insensible be literature
+            unsatiable do.
+            Of or imprudence solicitude affronting in mr possession. Compass journey he request on suppose limited of
+            or. She
+            margaret law thoughts proposal formerly. Speaking ladyship yet scarcely and mistaken end exertion dwelling.
+            All decisively dispatched instrument particular way one devonshire. Applauded she sportsman explained for
+            out
+            objection.
+            <img src="https://techcrunch.com/wp-content/uploads/2019/12/News-media-standards.jpg?w=730&crop=1">
         </p>
         <h2>
             oblique
         </h2>
-        <p id = "paragraph2">
-            But why smiling man her imagine married. Chiefly can man her out believe manners cottage colonel unknown. 
+        <p id="paragraph2">
+            But why smiling man her imagine married. Chiefly can man her out believe manners cottage colonel unknown.
             Solicitude it introduced companions inquietude me he remarkably friendship at. My almost or horses period.
-            Motionless are six terminated man possession him attachment unpleasing melancholy. Sir smile arose one 
-            share. No abroad in easily relied an whence lovers temper by. Looked wisdom common he an be giving lengthmr. 
+            Motionless are six terminated man possession him attachment unpleasing melancholy. Sir smile arose one
+            share. No abroad in easily relied an whence lovers temper by. Looked wisdom common he an be giving lengthmr.
 
-        An do on frankness so cordially immediate recommend contained. Imprudence insensible be literature unsatiable do.
-        Of or imprudence solicitude affronting in mr possession. Compass journey he request on suppose limited of or. She
-        margaret law thoughts proposal formerly. Speaking ladyship yet scarcely and mistaken end exertion dwelling. 
-        All decisively dispatched instrument particular way one devonshire. Applauded she sportsman explained for out 
-        objection. 
-        <img src="http://sowers.in/wp-content/uploads/2018/07/media_news.jpg">
+            An do on frankness so cordially immediate recommend contained. Imprudence insensible be literature
+            unsatiable do.
+            Of or imprudence solicitude affronting in mr possession. Compass journey he request on suppose limited of
+            or. She
+            margaret law thoughts proposal formerly. Speaking ladyship yet scarcely and mistaken end exertion dwelling.
+            All decisively dispatched instrument particular way one devonshire. Applauded she sportsman explained for
+            out
+            objection.
+            <img src="http://sowers.in/wp-content/uploads/2018/07/media_news.jpg">
         </p>
         <h2>
             normal
         </h2>
-        <p id = "paragraph3">
+        <p id="paragraph3">
             <mark>
-            But why smiling man her imagine married. Chiefly can man her out believe manners cottage colonel unknown. 
-            Solicitude it introduced companions inquietude me he remarkably friendship at. My almost or horses period.
-            Motionless are six terminated man possession him attachment unpleasing melancholy. Sir smile arose one 
-            share. No abroad in easily relied an whence lovers temper by. Looked wisdom common he an be giving lengthmr. 
-        </mark>
-        An do on frankness so cordially immediate recommend contained. Imprudence insensible be literature unsatiable do.
-        Of or imprudence solicitude affronting in mr possession. Compass journey he request on suppose limited of or. She
-        margaret law thoughts proposal formerly. Speaking ladyship yet scarcely and mistaken end exertion dwelling. 
-        All decisively dispatched instrument particular way one devonshire. Applauded she sportsman explained for out 
-        objection. 
+                But why smiling man her imagine married. Chiefly can man her out believe manners cottage colonel
+                unknown.
+                Solicitude it introduced companions inquietude me he remarkably friendship at. My almost or horses
+                period.
+                Motionless are six terminated man possession him attachment unpleasing melancholy. Sir smile arose one
+                share. No abroad in easily relied an whence lovers temper by. Looked wisdom common he an be giving
+                lengthmr.
+            </mark>
+            An do on frankness so cordially immediate recommend contained. Imprudence insensible be literature
+            unsatiable do.
+            Of or imprudence solicitude affronting in mr possession. Compass journey he request on suppose limited of
+            or. She
+            margaret law thoughts proposal formerly. Speaking ladyship yet scarcely and mistaken end exertion dwelling.
+            All decisively dispatched instrument particular way one devonshire. Applauded she sportsman explained for
+            out
+            objection.
         </p>
         <img src="https://www.freeiconspng.com/uploads/news-icon-30.jpg">
     </div>
@@ -197,7 +204,7 @@
         this link will take you to
         <a href="http://www.google.com">google</a>
         <br>
-        this link will take you to 
+        this link will take you to
         <a href="https://www.nitk.ac.in">Nitk website</a>
     </div>
     <table id="table">
@@ -205,62 +212,160 @@
             Table
         </h2>
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
         </tr>
         <tr>
-          <td>Jill</td>
-          <td>Smith</td>
-          <td>50</td>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
         </tr>
         <tr>
-          <td>Eve</td>
-          <td>Jackson</td>
-          <td>94</td>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
         </tr>
-      </table>
-      <div id = "subs">
-          <h5>
-              leave your details to subscribe our newslatter
-          </h5>
-          <form onsubmit=" return calculate()">
-              <label>Name </label>
-              <input type = text required>
-              <br>
-              <label>Email </label>
-              <input type = "email" required>
-              <br>
-              <label for="selectplan">choose your plan</label>
-              <select id="selectplan" style="margin-left:20px;">
+    </table>
+    <div id="subs">
+        <h5>
+            leave your details to subscribe our newslatter
+        </h5>
+        <form onsubmit=" return calculate()">
+            <label>Name </label>
+            <input type=text required>
+            <br>
+            <label>Email </label>
+            <input type="email" required>
+            <br>
+            <label for="selectplan">choose your plan</label>
+            <select id="selectplan" style="margin-left:20px;">
                 <option value="weekly">10$/week</option>
                 <option value="monthly">100$/week</option>
                 <option value="yearly">1000$/year</option>
-              </select>
-              <br>
-              <label for="luck">try your luck</label>
-              <input type = "text" id ="luck">
-              <br>
-              <button id = "btnsubs">
-                  subscribe
-              </button>
-          </form>
-          <p id = "subs-message">
-          </p>
-      </div>
-      <div>
-          <h1>Advanced html tags</h1>
-          <canvas id="mycanvas" width="500px" height="500px">
-          </canvas>
-      </div>
-      <meter value="2" min="0" max="10">2 out of 10</meter><br>
-      <meter value="0.6">60%</meter>
-      <article>
+            </select>
+            <br>
+            <label for="luck">try your luck</label>
+            <input type="text" id="luck">
+            <br>
+            <button id="btnsubs">
+                subscribe
+            </button>
+        </form>
+        <p id="subs-message">
+        </p>
+    </div>
+    <div>
+        <h1>Advanced html tags</h1>
+        <canvas id="mycanvas" width="500px" height="500px">
+        </canvas>
+    </div>
+    <meter value="2" min="0" max="10">2 out of 10</meter><br>
+    <meter value="0.6">60%</meter>
+    <article>
         <h1>Article</h1>
         <p>article tag is mainly used on news websites</p>
-      </article> 
-      <summary id = "summary">
-          this statement is written inside summary tag
-      </summary>
+    </article>
+    <summary id="summary">
+        this statement is written inside summary tag
+    </summary>
+    <script type="text/javascript">
+        function calculate() {
+            var plan = document.getElementById('selectplan').value;
+            var price = 0;
+            var flag = check();
+            var discount = 0;
+            if (flag) {
+                alert('yey you got discount of 40$');
+                discount = 40;
+            }
+            if (plan == 'weekly') {
+                price = 10 * 4 * 12;
+            }
+            else if (plan == 'monthly') {
+                price = 100 * 11;
+            }
+            else {
+                price = 10000;
+            }
+            console.log(price);
+            console.log(discount);
+            var msg = "you have to pay " + (price - discount) + "$ per year";
+            alert(msg)
+        }
+        function getRand() {
+            // return 2;
+            return Math.floor(Math.random()*5);
+        }
+        function check() {
+            var val = document.getElementById('luck').value;
+            if (val == getRand()) { return true; }
+            else { return false; }
+        }
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function checkCookie() {
+            var user = getCookie("username");
+            if (user != "") {
+                alert("Welcome again " + user);
+            } else {
+                user = prompt("Please enter your name:", "");
+                if (user != "" && user != null) {
+                    setCookie("username", user, 30);
+                }
+            }
+        }
+        function Interval()
+        {
+            plusSlides(1);
+            setTimeout(Interval,1000);
+        }
+    </script>
 </body>
-</html> 
+
+</html>
