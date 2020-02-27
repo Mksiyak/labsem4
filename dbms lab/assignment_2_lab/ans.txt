@@ -1,0 +1,2 @@
+create view RatingStats as select title,count(title) as number,avg(stars)
+ from TNS group by title;

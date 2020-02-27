@@ -328,9 +328,9 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-        function setCookie(cname, cvalue, exdays) {
+        function setCookie(cname, cvalue, minutes) {
             var d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            d.setTime(d.getTime() + (minutes* 60*1000));
             var expires = "expires=" + d.toUTCString();
             document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
@@ -352,18 +352,35 @@
         function checkCookie() {
             var user = getCookie("username");
             if (user != "") {
-                alert("Welcome again " + user);
+                alert("Welcome again " + user+" you have visited "+numOfVisitors()+" times before");
             } else {
-                user = prompt("Please enter your name:", "");
+                user = prompt("you visited first time\nPlease enter your name:", "");
                 if (user != "" && user != null) {
-                    setCookie("username", user, 30);
+                    setCookie("username", user, 1);
                 }
             }
+        }
+        function numOfVisitors()
+        {
+            var times = 0;
+            var tm = getCookie("times");
+            if(tm=="")
+            {
+                times = 1;
+            }
+            else
+            {
+                console.log(tm);
+                times = parseInt(tm);
+                times++;
+            }
+            setCookie("times",times,1);
+            return times;
         }
         function Interval()
         {
             plusSlides(1);
-            setTimeout(Interval,1000);
+            setTimeout(Interval,2100);
         }
     </script>
 </body>
